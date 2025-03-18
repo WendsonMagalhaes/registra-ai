@@ -1,0 +1,315 @@
+.card-painel-modal {
+    display: flex;
+    justify-content: space-between;
+    background-color: #042B48;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+    font-family: 'Aldrich', sans-serif;
+    cursor: pointer;
+    flex-wrap: wrap;
+    text-align: center;
+    /* Garante que os itens se ajustem em diferentes larguras de tela */
+}
+
+.card-painel-modal:hover {
+    background-color: #0077CC;
+}
+
+.card-painel-modal p {
+    margin: 0;
+    padding: 10px;
+
+}
+
+.card-painel-modal .id {
+    width: 5%;
+
+}
+
+.card-painel-modal .data {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}
+
+.card-painel-modal .contrato {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}
+
+.card-painel-modal .nome {
+    width: 21%;
+    /* Ajuste conforme necessário */
+}
+
+.card-painel-modal .motoboy {
+    width: 10;
+    /* Ajuste conforme necessário */
+}
+
+.card-painel-modal .status-registro {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.card-painel-modal .status-pagamento {
+    width: 14%;
+    /* Ajuste conforme necessário */
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    /* Dividir a área em 4 colunas */
+    gap: 15px;
+    /* Espaçamento entre as colunas */
+    border: #000 3px solid;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #d32f2f;
+}
+
+.modal h2 {
+    grid-column: span 4;
+    /* O título ocupará toda a linha */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-painel-modal-section {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.card-painel-modal-section-left {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.card-painel-modal-section-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.card-painel-modal-section .card-painel-modal-div {
+    display: flex;
+    flex-direction: row;
+    /* 4 colunas por linha */
+    gap: 10px;
+}
+
+.card-painel-modal-section .form-group {
+    position: relative;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-painel-modal-section .form-group input,
+.card-painel-modal-section .form-group textarea,
+.card-painel-modal-section .form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #042B48;
+    transition: 0.15s all ease;
+}
+
+.card-painel-modal-section .form-group input:focus,
+.card-painel-modal-section .form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.card-painel-modal-section .form-group .form-label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    pointer-events: none;
+    color: #777;
+    transition: 0.15s all ease;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.card-painel-modal-section .form-group input:focus+.form-label,
+.card-painel-modal-section .form-group input:not(:placeholder-shown)+.form-label,
+.card-painel-modal-section .form-group textarea:focus+.form-label,
+.card-painel-modal-section .form-group textarea:not(:placeholder-shown)+.form-label {
+    transform: translate(0, -22px);
+    font-size: 14px;
+    color: #042B48;
+
+}
+
+.card-painel-modal-section-right button {
+    background-color: #042B48;
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 3px solid #3399FF;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+    margin-left: 80%;
+}
+
+
+.card-painel-modal-section-right button:hover {
+    background-color: #0077CC;
+}
+
+.card-painel-modal-section-right button:disabled {
+    background-color: #B7D1E5;
+}
+
+.card-painel-modal-div.section-01,
+.card-painel-modal-div.section-02,
+.card-painel-modal-div.section-03,
+.card-painel-modal-div.section-04 {
+    display: flex;
+    /* Alinha os filhos em linha */
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para uma nova linha, se necessário */
+    gap: 50px;
+    /* Espaçamento entre os itens */
+    margin: 10px;
+}
+
+.card-painel-modal-div .form-group {
+    display: flex;
+    flex-direction: column;
+    /* Alinha o label e o input em coluna */
+    width: calc(25% - 10px);
+    /* Ajusta a largura dos itens, subtraindo o gap */
+}
+
+
+
+/* Exceção para o input do campo 'nome', mantendo o alinhamento padrão */
+.card-painel-modal-div .form-group.nome input {
+    text-align: left;
+    /* ou o alinhamento desejado */
+}
+
+.card-painel-modal-div .form-group input {
+    padding: 8px;
+    /* Espaçamento interno do input */
+    margin-bottom: 10px;
+    /* Adiciona espaçamento entre o input e o label abaixo */
+    text-align: center;
+
+}
+
+.card-painel-modal-div .form-group label {
+    margin-bottom: 5px;
+    /* Ajuste para dar um pequeno espaçamento entre o input e o label */
+}
+
+.card-painel-modal-div .id {
+    width: 5%;
+}
+
+.card-painel-modal-div .contrato {
+    width: 12%;
+}
+
+.card-painel-modal-div .nome {
+    width: 45%;
+}
+
+.card-painel-modal-div .data {
+    width: 15%;
+}
+
+.card-painel-modal-div .data-ativacao {
+    width: 16%;
+}
+
+.card-painel-modal-div .form-pagamento {
+    width: 20%;
+
+}
+
+.card-painel-modal-div .quant-parcelas {
+    width: 21%;
+}
+
+.card-painel-modal-div input {
+    text-align: center;
+}
+
+.card-painel-modal-div .total-debito {
+    width: 15%;
+}
+
+.card-painel-modal-section-right .ocorrencia {
+    flex: 3;
+    width: 90%;
+    height: 90%;
+    margin-top: 30px;
+
+
+}
+
+.card-painel-modal-section-right .ocorrencia textarea {
+    flex: 3;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow: auto;
+    resize: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+}

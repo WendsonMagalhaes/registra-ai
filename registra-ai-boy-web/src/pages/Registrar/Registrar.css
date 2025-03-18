@@ -1,0 +1,218 @@
+.registrar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+
+.registrar-container .registrar-main {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+
+}
+
+
+.registrar-main-section {
+    flex: 1;
+    border: 5px solid #000;
+    width: 10%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.registrar-main-section-search {
+    display: grid;
+    grid-template-columns: .2fr 1fr;
+    margin-top: 10px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+
+
+}
+
+.registrar-main-section-search button {
+    background-color: #042B48;
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 3px solid #3399FF;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+.registrar-main-section-search button:hover {
+    background-color: #0077CC;
+}
+
+.registrar-main-section-search button:disabled {
+    background-color: #B7D1E5;
+}
+
+.registrar-main-section-result {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.result-01,
+.result-02,
+.result-03 {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    width: 100%;
+    gap: 50px;
+}
+
+.result-04 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+    gap: 50px;
+
+}
+
+.result-05 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+    gap: 50px;
+
+}
+
+.result-01-01,
+.result-02-01,
+.result-03-01 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.result-01 input,
+.result-02 input,
+.result-03 input,
+.result-04 input,
+.result-05 input {
+    width: 100%;
+
+}
+
+
+.registrar-main-section .form-group {
+    position: relative;
+    margin-top: 12px 0;
+    width: 100%;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+
+
+}
+
+.registrar-main-section .form-group input {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.15s all ease;
+    background-color: transparent;
+    color: #042B48;
+    border: 3px solid #042B48;
+
+
+}
+
+.registrar-main-section .form-group input[type="text"] {
+    width: 100%;
+    border: 3px solid #042B48;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+}
+
+.registrar-main-section input:focus {
+    border-color: #042B48;
+}
+
+.registrar-main-section .form-group input::placeholder {
+    color: transparent;
+}
+
+.registrar-main-section .form-group .form-label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    color: #acacac;
+    transition: 0.15s all ease;
+}
+
+.registrar-main-section .form-group input:focus+.form-label,
+.registrar-main-section .form-group input:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    color: #042B48;
+    background-color: #FFFFFF;
+
+}
+
+.result-06 {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.registrar-main-section-button {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+    width: 100%;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.registrar-main-section-button button {
+    background-color: #042B48;
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 3px solid #3399FF;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+}
+
+.registrar-main-section-button button:hover {
+    background-color: #0077CC;
+}
+
+.registrar-main-section-button button:disabled {
+    background-color: #B7D1E5;
+}

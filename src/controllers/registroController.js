@@ -4,12 +4,12 @@ const RegistroService = require("../services/registroService");
 class RegistroController {
 
     async criarRegistro(req, res) {
-        const { data, contrato, nome, endereço, bairro, telefone, forma_de_pagamento,
-            data_de_ativação, quant_parcelas, total_debito, motoboy, ocorrencia,
+        const { data, contrato, nome, endereco, bairro, telefone, forma_de_pagamento,
+            data_de_ativacao, quant_parcelas, total_debito, motoboy, ocorrencia,
             status_registro, vencimento_registro, status_do_registro, status_do_pagamento
         } = req.body;
-        const resultado = await RegistroService.criarregistro(data, contrato, nome, endereço, bairro, telefone, forma_de_pagamento,
-            data_de_ativação, quant_parcelas, total_debito, motoboy, ocorrencia,
+        const resultado = await RegistroService.criarRegistro(data, contrato, nome, endereco, bairro, telefone, forma_de_pagamento,
+            data_de_ativacao, quant_parcelas, total_debito, motoboy, ocorrencia,
             status_registro, vencimento_registro, status_do_registro, status_do_pagamento
         );
         return res.status(resultado.success ? 201 : 400).json(resultado);
@@ -39,6 +39,28 @@ class RegistroController {
             return res.status(resultado.success ? 200 : 400).json(resultado);
         } catch (error) {
             return res.status(500).json({ success: false, message: 'Erro ao atualizar registro' });
+        }
+    }
+    async atualizarStatusRegistro(req, res) {
+        const { id } = req.params;
+        const { status_do_registro } = req.body;
+
+        try {
+            const resultado = await RegistroService.atualizarStatusRegistro(id, status_do_registro);
+            return res.status(resultado.success ? 200 : 400).json(resultado);
+        } catch (error) {
+            return res.status(500).json({ success: false, message: 'Erro ao atualizar registro: ' + error.message });
+        }
+    }
+    async atualizarStatus(req, res) {
+        const { id } = req.params;
+        const { status_registro, status_do_registro, status_do_pagamento } = req.body;
+
+        try {
+            const resultado = await RegistroService.atualizarStatus(id, status_registro, status_do_registro, status_do_pagamento);
+            return res.status(resultado.success ? 200 : 400).json(resultado);
+        } catch (error) {
+            return res.status(500).json({ success: false, message: 'Erro ao atualizar registro: ' + error.message });
         }
     }
 

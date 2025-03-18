@@ -170,10 +170,13 @@ class UsuarioService {
             }
 
             const senhaCorreta = await bcrypt.compare(password, usuarioEncontrado.password);
+<<<<<<< HEAD:src/services/usuarioService.js
             console.log(usuarioEncontrado.password)
             console.log(password)
             console.log(senhaCorreta)
 
+=======
+>>>>>>> first commit:registra-ai-boy-api/src/services/usuarioService.js
 
             if (!senhaCorreta) {
                 return { success: false, message: "Senha incorreta" };
@@ -185,7 +188,7 @@ class UsuarioService {
                 { expiresIn: "2h" }
             );
 
-            return { success: true, message: "Login realizado com sucesso!", token };
+            return { success: true, usuario, message: "Login realizado com sucesso!", token };
         } catch (error) {
             return { success: false, message: "Erro ao fazer login: " + error.message };
         }

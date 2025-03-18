@@ -1,6 +1,8 @@
 require("dotenv").config(); // Carrega variáveis de ambiente do arquivo .env
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
+
 
 // Importa as rotas de usuários
 const usuarioRoutes = require("./routes/usuarioRoutes");

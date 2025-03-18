@@ -13,6 +13,9 @@ router.get('/registros', RegistroController.listarRegistros);
 
 // Rota para criar um novo registro
 router.post("/registros", RegistroController.criarRegistro);
+router.patch("/status-registro/:id", RegistroController.atualizarStatusRegistro);
+router.patch("/registro/:id/status", RegistroController.atualizarStatus);
+
 
 
 //Rotas protegidas

@@ -59,11 +59,11 @@ class ContratoService {
 
     async buscarContrato(contrato) {
         try {
-            const contrato = await ContratoRepository.buscarContrato(contrato);
-            if (!contrato) {
+            const contratoEncontrado = await ContratoRepository.buscarContrato(contrato);
+            if (!contratoEncontrado) {
                 throw new Error('Contrato não encontrado!');
             }
-            return contrato;
+            return contratoEncontrado;
         } catch (error) {
             throw new Error('Erro ao buscar contrato: ' + error.message);
         }

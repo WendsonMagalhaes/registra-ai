@@ -56,8 +56,8 @@ class ContratoController {
         const { contrato } = req.params;
 
         try {
-            const contratos = await ContratoService.buscarContrato(contrato);
-            return res.status(200).json(contratos);
+            const contratoEncontrado = await ContratoService.buscarContrato(contrato);
+            return res.status(200).json(contratoEncontrado);
         } catch (error) {
             return res.status(400).json({ error: error.message });
         }

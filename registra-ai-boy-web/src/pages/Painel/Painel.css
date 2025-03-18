@@ -1,0 +1,194 @@
+.painel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.painel-container .painel-main {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.painel-container .painel-main-section {
+    flex: 1;
+    border: 5px solid #000;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120%;
+
+
+}
+
+.painel-main-section-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.painel-main-section .form-group {
+    position: relative;
+    margin-top: 12px 0;
+    width: 20%;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+
+
+}
+
+.painel-main-section .form-group input {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.15s all ease;
+    background-color: transparent;
+    color: #eee;
+    border: 3px solid #042B48;
+
+}
+
+.painel-main-section .form-group input[type="text"] {
+    width: 100%;
+    border: 3px solid #042B48;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+}
+
+.painel-main-section input:focus {
+    border-color: #042B48;
+}
+
+.painel-main-section .form-group input::placeholder {
+    color: transparent;
+}
+
+.painel-main-section .form-group .form-label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    color: #acacac;
+    transition: 0.15s all ease;
+}
+
+.painel-main-section .form-group input:focus+.form-label,
+.painel-main-section .form-group input:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    color: #042B48;
+    background-color: #FFFFFF;
+
+}
+
+.painel-main-section .form-group select {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.15s all ease;
+    background-color: transparent;
+    color: #042B48;
+    border: 3px solid #042B48;
+    width: 100%;
+    font-family: 'Aldrich', sans-serif;
+    appearance: none;
+    /* Remove o estilo padrão do select */
+    cursor: pointer;
+}
+
+.painel-main-section .form-group select:focus {
+    border-color: #042B48;
+    outline: none;
+}
+
+.painel-main-section .form-group select:focus+.form-label,
+.painel-main-section .form-group select:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    color: #042B48;
+    background-color: #FFFFFF;
+}
+
+/* Adicionando a seta SOMENTE ao select */
+.painel-main-section .form-group.select-container {
+    position: relative;
+}
+
+.painel-main-section .form-group.select-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #042B48;
+    pointer-events: none;
+}
+
+.painel-main-section-painel {
+    width: 100%;
+}
+
+.painel-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #042B48;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+    font-family: 'Aldrich', sans-serif;
+    text-align: center;
+
+
+}
+
+
+.painel-header span {
+    padding: 10px;
+    margin: 0;
+}
+
+.painel-header .id {
+    width: 5%;
+    /* Ajuste conforme necessário */
+}
+
+.painel-header .data {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}
+
+.painel-header .contrato {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}
+
+.painel-header .nome {
+    width: 25%;
+    /* Ajuste conforme necessário */
+}
+
+.painel-header .motoboy {
+    width: 10%;
+
+    /* Ajuste conforme necessário */
+}
+
+.painel-header .status-registro {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+
+.painel-header .status-pagamento {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}

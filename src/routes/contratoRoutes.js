@@ -25,7 +25,7 @@ router.put("/contratos/:contrato", authMiddleware, ContratoController.atualizarC
 router.delete("/contratos/:contrato", authMiddleware, ContratoController.deletarContrato);
 
 // Rota para buscar contrato pelo CONTRATO
-router.get('/contratos/:contrato', ContratoController.buscarContrato);
+router.get('/contrato/:contrato', ContratoController.buscarContrato);
 
 
 

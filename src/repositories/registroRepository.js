@@ -7,16 +7,10 @@ class RegistroRepository {
     async criarRegistro(data, contrato, nome, endereco, bairro, telefone, formaDePagamento, dataDeAtivacao,
         quantParcelas, totalDebito, motoboy, ocorrencia, statusRegistro, vencimentoRegistro, statusDoRegistro, statusDoPagamento) {
 
-        // Verifica se o registro já existe
-        const registroExistente = await this.buscarRegistroPorId(id);
-        if (registroExistente) {
-            throw new Error('Registro já existe!');
-        }
-
         const query = `
           INSERT INTO registros (
-              data, contrato, nome, endereço, bairro, telefone, forma_de_pagamento, 
-              data_de_ativação, quant_parcelas, total_debito, motoboy, ocorrencia, 
+              data, contrato, nome, endereco, bairro, telefone, forma_de_pagamento, 
+              data_de_ativacao, quant_parcelas, total_debito, motoboy, ocorrencia, 
               status_registro, vencimento_registro, status_do_registro, status_do_pagamento
           ) 
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) 
@@ -75,6 +69,48 @@ class RegistroRepository {
             throw new Error('Erro ao atualizar registro: ' + error.message);
         }
     }
+
+    // Método para atualizar Registros
+    async atualizarStatusRegistro(id, statusDoRegistro) {
+        try {
+            const query = `
+            UPDATE registros
+            SET 
+                status_registro = COALESCE($1, status_registro)
+            WHERE id = $2
+            RETURNING *;
+        `;
+
+            const valores = [statusDoRegistro, id]; // Passando o id como segundo parâmetro
+            const { rows } = await db.query(query, valores);
+            return rows[0] || null;
+        } catch (error) {
+            throw new Error('Erro ao atualizar registro: ' + error.message);
+        }
+    }
+
+    // Método para atualizar Registros
+    async atualizarStatus(id, statusRegistro, statusDoRegistro, statusDoPagamento) {
+        try {
+            const query = `
+                UPDATE registros
+                SET 
+                    status_registro = COALESCE($1, status_registro),
+                    status_do_registro = COALESCE($2, status_do_registro),
+                    status_do_pagamento = COALESCE($3, status_do_pagamento)
+
+                WHERE id = $4
+                RETURNING *;
+            `;
+
+            const valores = [statusRegistro, statusDoRegistro, statusDoPagamento, id]; // Passando o id como segundo parâmetro
+            const { rows } = await db.query(query, valores);
+            return rows[0] || null;
+        } catch (error) {
+            throw new Error('Erro ao atualizar registro: ' + error.message);
+        }
+    }
+
 
     // Método para deletar registros
     async deletarRegistro(id) {

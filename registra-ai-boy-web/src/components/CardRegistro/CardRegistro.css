@@ -1,0 +1,89 @@
+.card-registro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #042B48;
+    color: #eee;
+    padding: 12px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Aldrich', sans-serif;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+    margin: 5px;
+}
+
+.card-registro:hover {
+    background-color: #0077CC;
+
+}
+
+.card-registro .campo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-registro button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-registro button:hover {
+    transform: scale(1.1);
+}
+
+.card-registro .confirmar-btn {
+    margin-left: auto;
+}
+
+/* Estilo do botão desabilitado */
+.card-registro button:disabled {
+    cursor: not-allowed;
+}
+
+.card-registro span {
+    padding: 10px;
+}
+
+.card-registro .id {
+    width: 5%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .contrato {
+    width: 20%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .nome {
+    width: 25%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .registro {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .motoboy {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .status {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .data {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.card-registro .acoes {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}

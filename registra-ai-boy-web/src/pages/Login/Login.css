@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #042B48;
+    height: 100vh;
+    font-family: 'Aldrich', sans-serif;
+
+}
+
+.login-container .login-box {
+    display: flex;
+    width: 60%;
+    height: 70%;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.login-container .left-side {
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B7D1E5;
+    color: #042B48;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+
+}
+
+.login-container .left-side h2 {
+    font-size: 2rem;
+    margin-bottom: -10px;
+    margin-top: 100px;
+
+}
+
+.login-container .left-side p {
+    font-size: 1rem;
+
+}
+
+.login-container .logo {
+    width: auto;
+    height: 35%;
+    margin-bottom: 20px;
+    margin-top: -100px;
+}
+
+.login-container .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 20px;
+
+}
+
+.login-container .title-login {
+    width: auto;
+    margin-bottom: 20px;
+    margin-top: -100px;
+
+}
+
+.forms-login {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 80%;
+}
+
+.forms-login .form-group {
+    position: relative;
+    margin-top: 12px 0;
+    width: 80%;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+
+
+}
+
+.forms-login .form-group input {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.15s all ease;
+    background-color: transparent;
+    color: #042B48;
+    border: 3px solid #042B48;
+
+}
+
+.forms-login .form-group input[type="text"],
+.forms-login .form-group input[type="password"] {
+    width: 60%;
+    border: 3px solid #042B48;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+}
+
+.forms-login input:focus {
+    border-color: #042B48;
+}
+
+.forms-login .form-group input::placeholder {
+    color: transparent;
+}
+
+.forms-login .form-group .form-label {
+    position: absolute;
+    top: 12px;
+    left: 18%;
+    padding: 0 10px;
+    pointer-events: none;
+    color: #acacac;
+    transition: 0.15s all ease;
+}
+
+.forms-login .form-group input:focus+.form-label,
+.forms-login .form-group input:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    color: #042B48;
+    background-color: #FFFFFF;
+
+}
+
+
+.login-container button {
+    background-color: #042B48;
+    color: white;
+    cursor: pointer;
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #3399FF;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 20px;
+}
+
+.login-container button:hover {
+    background-color: #0077CC;
+}
+
+.login-container button:disabled {
+    background-color: #B7D1E5;
+}
+
+.login-container .error-message {
+    color: #DC2626;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+
+}
+
+.login-container a {
+    color: #042B48;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    color: #0077CC
+}
+
+
+.login-container .title-login {
+    margin-top: 10%;
+}
+
+.login-container .forgot-password {
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    justify-content: flex-end;
+    padding-right: 20px;
+}

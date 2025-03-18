@@ -1,0 +1,195 @@
+.registrados-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.registrados-container .registrados-main {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.registrados-container .registrados-main-section {
+    flex: 1;
+    border: 5px solid #000;
+    width: 10%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.registrados-main-section-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.registrados-main-section .form-group {
+    position: relative;
+    margin-top: 12px 0;
+    width: 20%;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+
+
+}
+
+.registrados-main-section .form-group input {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.15s all ease;
+    background-color: transparent;
+    color: #eee;
+    border: 3px solid #042B48;
+
+}
+
+.registrados-main-section .form-group input[type="text"] {
+    width: 100%;
+    border: 3px solid #042B48;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+}
+
+.registrados-main-section input:focus {
+    border-color: #042B48;
+}
+
+.registrados-main-section .form-group input::placeholder {
+    color: transparent;
+}
+
+.registrados-main-section .form-group .form-label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    color: #acacac;
+    transition: 0.15s all ease;
+}
+
+.registrados-main-section .form-group input:focus+.form-label,
+.registrados-main-section .form-group input:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    color: #042B48;
+    background-color: #FFFFFF;
+
+}
+
+.registrados-main-section .form-group select {
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.15s all ease;
+    background-color: transparent;
+    color: #042B48;
+    border: 3px solid #042B48;
+    width: 100%;
+    font-family: 'Aldrich', sans-serif;
+    appearance: none;
+    /* Remove o estilo padrão do select */
+    cursor: pointer;
+}
+
+.registrados-main-section .form-group select:focus {
+    border-color: #042B48;
+    outline: none;
+}
+
+.registrados-main-section .form-group select:focus+.form-label,
+.registrados-main-section .form-group select:not(:placeholder-shown)+.form-label {
+    transform: translate(5px, -22px);
+    color: #042B48;
+    background-color: #FFFFFF;
+}
+
+/* Adicionando a seta SOMENTE ao select */
+.registrados-main-section .form-group.select-container {
+    position: relative;
+}
+
+.registrados-main-section .form-group.select-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #042B48;
+    pointer-events: none;
+}
+
+.registrados-main-section-painel {
+    width: 100%;
+}
+
+.registrados-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #042B48;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+    font-family: 'Aldrich', sans-serif;
+
+
+}
+
+
+.registrados-header span {
+    padding: 10px;
+}
+
+.registrados-header .id {
+    width: 5%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .contrato {
+    width: 20%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .nome {
+    width: 25%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .registro {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .motoboy {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .status {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .data {
+    width: 15%;
+    /* Ajuste conforme necessário */
+}
+
+.registrados-header .acoes {
+    width: 10%;
+    /* Ajuste conforme necessário */
+}

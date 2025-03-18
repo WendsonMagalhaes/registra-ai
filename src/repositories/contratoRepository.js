@@ -6,7 +6,7 @@ class ContratoRepository {
     // Método para criar os contratos
     async criarContrato(contrato, formaPagamento, cobertura, qtdParcelasAtrasadas,
         parcelaMaisAtrasada, nome, cpfCnpj, cidade, ddd, telefone, dddCel, telefone2,
-        telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia, codVindi) {
+        telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia, codVindi, dataAtivacao, tempoCasa) {
         // Verifica se o contrato já existe
         const contratoExistente = await this.buscarContrato(contrato);
         if (contratoExistente) {
@@ -15,11 +15,11 @@ class ContratoRepository {
 
         const query = `
           INSERT INTO base_clientes 
-          (contrato, forma_pagamento, cobertura, qtd_parcelas_atrasadas, parcela_mais_atrasada, nome, cpf_cnpj, cidade, ddd, telefone, ddd_cel, telefone2, telefone3, debito_total, endereco, bairro, cep, ponto_referencia, cod_vindi) 
+          (contrato, forma_pagamento, cobertura, qtd_parcelas_atrasadas, parcela_mais_atrasada, nome, cpf_cnpj, cidade, ddd, telefone, ddd_cel, telefone2, telefone3, debito_total, endereco, bairro, cep, ponto_referencia, cod_vindi,data_ativacao,tempo_de_casa) 
           VALUES 
           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) 
           RETURNING *`;
-        const valores = [contrato, formaPagamento, cobertura, qtdParcelasAtrasadas, parcelaMaisAtrasada, nome, cpfCnpj, cidade, ddd, telefone, dddCel, telefone2, telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia, codVindi];
+        const valores = [contrato, formaPagamento, cobertura, qtdParcelasAtrasadas, parcelaMaisAtrasada, nome, cpfCnpj, cidade, ddd, telefone, dddCel, telefone2, telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia, codVindi, dataAtivacao, tempoCasa];
 
         const { rows } = await db.query(query, valores);
         return rows[0]; // Retorna o contrato criado
@@ -37,7 +37,7 @@ class ContratoRepository {
     }
 
     // Método para atualizar usuários
-    async atualizarContrato(contratoId, formaPagamento, cobertura, qtdParcelasAtrasadas, parcelaMaisAtrasada, nome, cpfCnpj, cidade, ddd, telefone, dddCel, telefone2, telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia, codVindi) {
+    async atualizarContrato(contratoId, formaPagamento, cobertura, qtdParcelasAtrasadas, parcelaMaisAtrasada, nome, cpfCnpj, cidade, ddd, telefone, dddCel, telefone2, telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia, codVindi, dataAtivacao, tempoCasa) {
         try {
             const query = `
                 UPDATE base_clientes
@@ -59,7 +59,9 @@ class ContratoRepository {
                     bairro = COALESCE($15, bairro),
                     cep = COALESCE($16, cep),
                     ponto_referencia = COALESCE($17, ponto_referencia),
-                    cod_vindi = COALESCE($18, cod_vindi)
+                    cod_vindi = COALESCE($18, cod_vindi),
+                    data_ativacao = COALESCE($19, data_ativacao),
+                    tempo_de_casa = COALESCE($10, tempo_de_casa)
                 WHERE contrato = $19
                 RETURNING *;
             `;
@@ -67,7 +69,7 @@ class ContratoRepository {
             const valores = [
                 formaPagamento, cobertura, qtdParcelasAtrasadas, parcelaMaisAtrasada, nome, cpfCnpj, cidade,
                 ddd, telefone, dddCel, telefone2, telefone3, debitoTotal, endereco, bairro, cep, pontoReferencia,
-                codVindi, contratoId
+                codVindi, dataAtivacao, tempoCasa, contratoId
             ];
             const { rows } = await db.query(query, valores);
             return rows[0] || null;
